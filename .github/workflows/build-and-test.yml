@@ -19,28 +19,28 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: ./app/package-lock.json
+        cache: 'yarn'
+        cache-dependency-path: ./app/yarn.lock
         
     - name: 📦 Install dependencies
       run: |
         cd app
-        npm ci
+        yarn install --frozen-lockfile
         
     - name: 🔍 Run TypeScript check
       run: |
         cd app
-        npx tsc --noEmit
+        yarn tsc --noEmit
         
     - name: 🧹 Run ESLint
       run: |
         cd app
-        npm run lint
+        yarn lint
         
     - name: 🔨 Build application
       run: |
         cd app
-        npm run build
+        yarn build
         
     - name: ✅ Build Success
       if: success()

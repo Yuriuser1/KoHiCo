@@ -19,18 +19,18 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        cache: 'npm'
-        cache-dependency-path: ./app/package-lock.json
+        cache: 'yarn'
+        cache-dependency-path: ./app/yarn.lock
         
     - name: 📦 Install dependencies
       run: |
         cd app
-        npm ci
+        yarn install --frozen-lockfile
         
     - name: 🔨 Build Next.js application
       run: |
         cd app
-        npm run build
+        yarn build
         
     - name: 📋 Create deployment package
       run: |
@@ -128,11 +128,11 @@ jobs:
           
           # Устанавливаем зависимости и собираем проект
           cd app
-          npm install
-          npm run build
+          yarn install
+          yarn build
           
           # Перезапускаем приложение (если используется PM2)
-          pm2 restart kohico || pm2 start npm --name "kohico" -- start
+          pm2 restart kohico || pm2 start yarn --name "kohico" -- start
           
     - name: ✅ Deployment Success Notification
       if: success()

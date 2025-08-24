@@ -29,13 +29,13 @@ jobs:
     - name: 📦 Install dependencies
       run: |
         cd app
-        npm ci
+        yarn install --frozen-lockfile
         
     - name: 🔨 Build static export
       run: |
         cd app
         # Создаем статическую сборку Next.js
-        npm run build
+        yarn build
         
         # Если есть статическая папка, используем её
         if [ -d "../deploy_package_REAL" ]; then
@@ -45,7 +45,7 @@ jobs:
         else
           echo "📁 Создаем статическую сборку из Next.js"
           # Попробуем экспортировать статические файлы
-          npm run export 2>/dev/null || echo "Export не настроен, используем build"
+          yarn export 2>/dev/null || echo "Export не настроен, используем build"
         fi
         
     - name: 📋 Prepare deployment files
