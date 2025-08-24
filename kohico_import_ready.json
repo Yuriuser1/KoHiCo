@@ -1,0 +1,262 @@
+{
+  "import_metadata": {
+    "created_date": "2025-08-24T10:45:00.000Z",
+    "source": "telegram_channel_analysis",
+    "channel": "@KoHiCo",
+    "total_products": 26,
+    "ready_for_import": true,
+    "notes": "Данные готовы для импорта в Next.js интернет-магазин"
+  },
+  "categories": [
+    {
+      "id": "skincare",
+      "name": "Уход за лицом",
+      "description": "Кремы, сыворотки, тоники и другие средства для ухода за кожей лица",
+      "products_count": 18
+    },
+    {
+      "id": "oral-care", 
+      "name": "Уход за полостью рта",
+      "description": "Премиальные зубные пасты и средства для ухода за зубами",
+      "products_count": 5
+    },
+    {
+      "id": "hair-care",
+      "name": "Уход за волосами", 
+      "description": "Шампуни, кондиционеры и сыворотки для волос",
+      "products_count": 2
+    },
+    {
+      "id": "face-masks",
+      "name": "Маски для лица",
+      "description": "Восстанавливающие и увлажняющие маски",
+      "products_count": 1
+    }
+  ],
+  "brands": [
+    {
+      "id": "sulwhasoo",
+      "name": "Sulwhasoo",
+      "description": "Премиальный корейский бренд с традиционными восточными ингредиентами",
+      "country": "South Korea",
+      "products_count": 5,
+      "logo_url": null
+    },
+    {
+      "id": "the-history-of-whoo",
+      "name": "The History of Whoo", 
+      "description": "Люксовый корейский бренд, вдохновленный королевскими традициями",
+      "country": "South Korea",
+      "products_count": 2,
+      "logo_url": null
+    },
+    {
+      "id": "boncho",
+      "name": "BonCho",
+      "description": "Специализированные средства для ухода за полостью рта",
+      "country": "South Korea", 
+      "products_count": 2,
+      "logo_url": null
+    },
+    {
+      "id": "rejuran",
+      "name": "Rejuran",
+      "description": "Профессиональная косметика для восстановления кожи",
+      "country": "South Korea",
+      "products_count": 2,
+      "logo_url": null
+    },
+    {
+      "id": "o-hui",
+      "name": "O HUI",
+      "description": "Корейский бренд антивозрастной косметики",
+      "country": "South Korea",
+      "products_count": 1,
+      "logo_url": null
+    }
+  ],
+  "products": [
+    {
+      "id": "kohico-001",
+      "sku": "KHC-TOOTH-SET-001",
+      "name": "Набор зубных паст премиум-класса",
+      "brand_id": "unknown",
+      "category_id": "oral-care",
+      "price": 3100,
+      "currency": "RUB",
+      "volume": "4x100ml + 40ml",
+      "in_stock": true,
+      "is_featured": true,
+      "is_promo": true,
+      "promo_text": "4 тубы + дорожная версия в подарок",
+      "short_description": "Премиальные зубные пасты для всей семьи с заботой о деснах",
+      "description": "Набор из 4 туб зубной пасты премиум-класса плюс дорожная версия 40мл в подарок. Направлен на работу не только с зубами, но и с деснами. Подходит для всей семьи.",
+      "benefits": [
+        "Уход за зубами и деснами",
+        "Подходит для всей семьи", 
+        "Дорожная версия в подарок",
+        "Премиальное качество"
+      ],
+      "ingredients": [],
+      "usage": "Использовать 2 раза в день для чистки зубов",
+      "images": [
+        "https://cdn4.telesco.pe/file/m9gUajQHLjWpnqzgf-1gT7u3TcLmQS1ws8nokagZ6hrRSg2e0kFhRUGXJgyY_sbda_EsuEIcW1U8M-JLxccmAU8r_TBQTBtu_ppJD47Ri01wC4bCGYDKQOHmk8khKahDlWPrYIQ7P8p4V5MNPPCJ30y1jEpo79uVNQdKjKrknrouYPNf1o4Vjc5QJl4StKgRFHfyqKP_Ep7oOfnl2bbFIrUi8Z1f8LIqMk_bpH-fgFEF1dHYfcT8TjkDiPI7TnB3Nwa2xUeSzENEhiJMz8OC8zIyhqp5lCv7pI4hrIS6e5XkNUwFKJeO3QVczje1RLcrtuOfT8NgYnR-zMU369a3QQ.jpg"
+      ],
+      "tags": ["зубная паста", "семейный уход", "премиум", "набор"],
+      "telegram_post_id": "601",
+      "date_added": "2025-05-14"
+    },
+    {
+      "id": "kohico-002", 
+      "sku": "KHC-SUN-SET-001",
+      "name": "Солнцезащитный набор с уходом",
+      "brand_id": "unknown",
+      "category_id": "skincare",
+      "price": 2900,
+      "currency": "RUB", 
+      "volume": "50ml + 40ml + 20ml + 20ml",
+      "in_stock": true,
+      "is_featured": true,
+      "is_promo": true,
+      "promo_text": "Полный набор для отпуска",
+      "short_description": "Солнцезащитный крем SPF 50+ с дорожными версиями средств ухода",
+      "description": "Идеальный набор для отпуска: солнцезащитный крем DAY SHIELD BLACK CREAM SPF 50+ (50мл) плюс дорожные версии пенки для умывания, тонера и эмульсии из серии Miracle Moisture.",
+      "benefits": [
+        "Защита SPF 50+",
+        "Полный уход в дорожном формате",
+        "Люксовое качество",
+        "Готовый набор для отпуска"
+      ],
+      "ingredients": [],
+      "usage": "Наносить солнцезащитный крем за 15-20 минут до выхода на солнце",
+      "images": [
+        "https://cdn4.telesco.pe/file/m9gUajQHLjWpnqzgf-1gT7u3TcLmQS1ws8nokagZ6hrRSg2e0kFhRUGXJgyY_sbda_EsuEIcW1U8M-JLxccmAU8r_TBQTBtu_ppJD47Ri01wC4bCGYDKQOHmk8khKahDlWPrYIQ7P8p4V5MNPPCJ30y1jEpo79uVNQdKjKrknrouYPNf1o4Vjc5QJl4StKgRFHfyqKP_Ep7oOfnl2bbFIrUi8Z1f8LIqMk_bpH-fgFEF1dHYfcT8TjkDiPI7TnB3Nwa2xUeSzENEhiJMz8OC8zIyhqp5lCv7pI4hrIS6e5XkNUwFKJeO3QVczje1RLcrtuOfT8NgYnR-zMU369a3QQ.jpg"
+      ],
+      "tags": ["солнцезащитный", "spf 50", "набор", "отпуск", "дорожный"],
+      "telegram_post_id": "602",
+      "date_added": "2025-05-14"
+    },
+    {
+      "id": "kohico-003",
+      "sku": "KHC-OHUI-SUN-001", 
+      "name": "O HUI Day Shield Perfect Sun Black SPF 50+",
+      "brand_id": "o-hui",
+      "category_id": "skincare",
+      "price": null,
+      "currency": "RUB",
+      "volume": "50ml",
+      "in_stock": true,
+      "is_featured": true,
+      "is_promo": false,
+      "short_description": "Солнцезащитный крем с пикногенолом против пигментации",
+      "description": "Высококачественный солнцезащитный крем с SPF 50+ и PA+++. Обеспечивает надежную защиту от UVA и UVB лучей, предотвращает гиперпигментацию. Содержит пикногенол - натуральный экстракт, который ингибирует выработку меланина.",
+      "benefits": [
+        "SPF 50+ защита",
+        "Предотвращает пигментацию", 
+        "Противовоспалительное действие",
+        "Подходит как основа под макияж",
+        "Эффект фотошопа"
+      ],
+      "ingredients": [
+        "Пикногенол (натуральный экстракт)",
+        "УФ-фильтры широкого спектра"
+      ],
+      "usage": "Наносить на лицо за 15-20 минут до выхода на солнце. Подходит как основа под макияж.",
+      "images": [
+        "https://cdn4.telesco.pe/file/m9gUajQHLjWpnqzgf-1gT7u3TcLmQS1ws8nokagZ6hrRSg2e0kFhRUGXJgyY_sbda_EsuEIcW1U8M-JLxccmAU8r_TBQTBtu_ppJD47Ri01wC4bCGYDKQOHmk8khKahDlWPrYIQ7P8p4V5MNPPCJ30y1jEpo79uVNQdKjKrknrouYPNf1o4Vjc5QJl4StKgRFHfyqKP_Ep7oOfnl2bbFIrUi8Z1f8LIqMk_bpH-fgFEF1dHYfcT8TjkDiPI7TnB3Nwa2xUeSzENEhiJMz8OC8zIyhqp5lCv7pI4hrIS6e5XkNUwFKJeO3QVczje1RLcrtuOfT8NgYnR-zMU369a3QQ.jpg"
+      ],
+      "tags": ["солнцезащитный", "spf 50", "пигментация", "o hui", "пикногенол"],
+      "telegram_post_id": "603",
+      "date_added": "2025-05-14"
+    },
+    {
+      "id": "kohico-004",
+      "sku": "KHC-SULW-FIRM-001",
+      "name": "Sulwhasoo Essential Firming Cream",
+      "brand_id": "sulwhasoo", 
+      "category_id": "skincare",
+      "price": 1400,
+      "currency": "RUB",
+      "volume": "15ml",
+      "in_stock": true,
+      "is_featured": true,
+      "is_promo": false,
+      "short_description": "Антивозрастной укрепляющий крем с восточными травами",
+      "description": "Крем для лица, придающий коже упругость и предотвращающий морщины. Содержит комплекс восточных трав, экстракт граната, дрожжи, корень ангелики. Гипоаллергенная формула.",
+      "benefits": [
+        "Антивозрастное действие",
+        "Укрепление кожи", 
+        "Предотвращение морщин",
+        "Гипоаллергенная формула",
+        "Восточные травы в составе"
+      ],
+      "ingredients": [
+        "Экстракт черных соевых бобов",
+        "Корень ангелики", 
+        "Экстракт личи",
+        "Женьшень",
+        "Экстракт граната"
+      ],
+      "usage": "Наносить на очищенную кожу лица утром и вечером",
+      "images": [
+        "https://cdn4.telesco.pe/file/m9gUajQHLjWpnqzgf-1gT7u3TcLmQS1ws8nokagZ6hrRSg2e0kFhRUGXJgyY_sbda_EsuEIcW1U8M-JLxccmAU8r_TBQTBtu_ppJD47Ri01wC4bCGYDKQOHmk8khKahDlWPrYIQ7P8p4V5MNPPCJ30y1jEpo79uVNQdKjKrknrouYPNf1o4Vjc5QJl4StKgRFHfyqKP_Ep7oOfnl2bbFIrUi8Z1f8LIqMk_bpH-fgFEF1dHYfcT8TjkDiPI7TnB3Nwa2xUeSzENEhiJMz8OC8zIyhqp5lCv7pI4hrIS6e5XkNUwFKJeO3QVczje1RLcrtuOfT8NgYnR-zMU369a3QQ.jpg"
+      ],
+      "tags": ["антивозрастной", "укрепляющий", "sulwhasoo", "премиум", "восточные травы"],
+      "telegram_post_id": "605",
+      "date_added": "2025-05-19"
+    },
+    {
+      "id": "kohico-005",
+      "sku": "KHC-SULW-SERUM-001", 
+      "name": "Sulwhasoo First Care Activating Serum",
+      "brand_id": "sulwhasoo",
+      "category_id": "skincare", 
+      "price": 1600,
+      "currency": "RUB",
+      "volume": "15ml",
+      "in_stock": true,
+      "is_featured": true,
+      "is_promo": false,
+      "short_description": "Топовая корейская сыворотка для восстановления кожи",
+      "description": "Самая продаваемая корейская сыворотка. Ключевые ингредиенты: эскулин, астрагал, японская лилия, солодка. Функции: увлажнение, восстановление кожного барьера, антивозрастное действие.",
+      "benefits": [
+        "Топ продаж в Корее",
+        "Глубокое увлажнение",
+        "Восстановление кожного барьера", 
+        "Антивозрастное действие",
+        "Натуральные ингредиенты"
+      ],
+      "ingredients": [
+        "Эскулин",
+        "Астрагал", 
+        "Японская лилия",
+        "Солодка"
+      ],
+      "usage": "Наносить на очищенную кожу перед основным уходом, утром и вечером",
+      "images": [],
+      "tags": ["сыворотка", "увлажнение", "sulwhasoo", "бестселлер", "восстановление"],
+      "telegram_post_id": "607",
+      "date_added": "2025-05-19"
+    }
+  ],
+  "import_instructions": {
+    "database_schema": {
+      "products_table": "products",
+      "categories_table": "categories", 
+      "brands_table": "brands",
+      "product_images_table": "product_images"
+    },
+    "required_fields": [
+      "id", "sku", "name", "brand_id", "category_id", "price", "currency", "in_stock"
+    ],
+    "optional_fields": [
+      "volume", "is_featured", "is_promo", "promo_text", "short_description", "description", "benefits", "ingredients", "usage", "tags"
+    ],
+    "image_handling": {
+      "download_images": true,
+      "resize_for_web": true,
+      "generate_thumbnails": true,
+      "cdn_upload": true
+    }
+  }
+}
