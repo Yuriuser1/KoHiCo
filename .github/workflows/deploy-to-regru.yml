@@ -20,20 +20,10 @@ jobs:
       with:
         node-version: '18'
         
-    - name: 📦 Cache yarn dependencies
-      uses: actions/cache@v3
-      with:
-        path: |
-          app/node_modules
-          app/.yarn/cache
-        key: ${{ runner.os }}-yarn-${{ hashFiles('app/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
-          
     - name: 📦 Install dependencies
       run: |
         cd app
-        yarn install --frozen-lockfile
+        yarn install
         
     - name: 🔨 Build Next.js application
       run: |
