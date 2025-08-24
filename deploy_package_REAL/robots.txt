@@ -1,0 +1,13 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.kohico.ru/sitemap.xml
+
+# Основные страницы
+Allow: /index.html
+Allow: /catalog.html
+
+# SEO
+Allow: /sitemap.xml
+Allow: /robots.txt

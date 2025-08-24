@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Каталог - KoHiCo | Премиальная корейская косметика</title>
+    <meta name="description" content="Полный каталог премиальной корейской косметики KoHiCo. 26 товаров от лучших брендов: Sulwhasoo, The History of Whoo, BonCho, Rejuran, O HUI."/>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 2rem; font-weight: bold; color: #e91e63; text-decoration: none; }
+        .nav { display: flex; gap: 2rem; }
+        .nav a { text-decoration: none; color: #333; font-weight: 500; }
+        .nav a:hover { color: #e91e63; }
+        .section { padding: 4rem 0; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #333; }
+        .filters { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .filter-btn { padding: 0.5rem 1rem; border: 2px solid #e91e63; background: white; color: #e91e63; border-radius: 5px; cursor: pointer; }
+        .filter-btn.active { background: #e91e63; color: white; }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .product { background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; }
+        .product:hover { transform: translateY(-5px); }
+        .product-image { height: 200px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; color: #999; font-size: 2rem; }
+        .product-content { padding: 1.5rem; }
+        .product-brand { color: #e91e63; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .product-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #333; }
+        .product-price { font-size: 1.3rem; font-weight: bold; color: #e91e63; margin-bottom: 1rem; }
+        .product-description { color: #666; font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.4; }
+        .btn { display: inline-block; padding: 0.8rem 1.5rem; background: #e91e63; color: white; text-decoration: none; border-radius: 5px; font-weight: 600; transition: background 0.3s; border: none; cursor: pointer; }
+        .btn:hover { background: #c2185b; }
+        .promo { background: #fff3e0; border: 2px solid #ff9800; border-radius: 5px; padding: 0.5rem; margin-bottom: 1rem; }
+        .promo-text { color: #f57c00; font-weight: bold; font-size: 0.9rem; }
+        .category-badge { background: #e91e63; color: white; padding: 0.2rem 0.5rem; border-radius: 3px; font-size: 0.8rem; margin-bottom: 0.5rem; display: inline-block; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">KoHiCo</a>
+                <nav class="nav">
+                    <a href="catalog.html">Каталог</a>
+                    <a href="index.html#brands">Бренды</a>
+                    <a href="index.html#about">О нас</a>
+                    <a href="index.html#contact">Контакты</a>
+                </nav>
+                <div>
+                    <a href="#" class="btn">Корзина (0)</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="section-title">Каталог товаров</h1>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">Все товары</button>
+                <button class="filter-btn" data-category="skincare">Уход за лицом</button>
+                <button class="filter-btn" data-category="oral-care">Уход за полостью рта</button>
+                <button class="filter-btn" data-category="hair-care">Уход за волосами</button>
+                <button class="filter-btn" data-category="face-masks">Маски</button>
+            </div>
+
+            <div class="products">
+                
+                <!-- Набор зубных паст -->
+                <div class="product" data-category="oral-care">
+                    <div class="product-image">📦</div>
+                    <div class="product-content">
+                        <div class="category-badge">Уход за полостью рта</div>
+                        <div class="product-brand">Premium Oral Care</div>
+                        <div class="product-title">Набор зубных паст премиум-класса</div>
+                        <div class="promo">
+                            <div class="promo-text">4 тубы + дорожная версия в подарок</div>
+                        </div>
+                        <div class="product-price">3 100 ₽</div>
+                        <div class="product-description">
+                            Набор из 4 туб зубной пасты премиум-класса плюс дорожная версия 40мл в подарок. 
+                            Направлен на работу не только с зубами, но и с деснами. Подходит для всей семьи.
+                            <br><br><strong>Объем:</strong> 4x100ml + 40ml
+                            <br><strong>Преимущества:</strong> Уход за деснами, семейный формат
+                        </div>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- Солнцезащитный набор -->
+                <div class="product" data-category="skincare">
+                    <div class="product-image">☀️</div>
+                    <div class="product-content">
+                        <div class="category-badge">Уход за лицом</div>
+                        <div class="product-brand">O HUI</div>
+                        <div class="product-title">Солнцезащитный набор с уходом</div>
+                        <div class="promo">
+                            <div class="promo-text">Полный набор для отпуска</div>
+                        </div>
+                        <div class="product-price">2 900 ₽</div>
+                        <div class="product-description">
+                            Идеальный набор для отпуска: солнцезащитный крем DAY SHIELD BLACK CREAM SPF 50+ (50мл) 
+                            плюс дорожные версии пенки для умывания, тонера и эмульсии из серии Miracle Moisture.
+                            <br><br><strong>Состав:</strong> SPF 50+ крем + 3 дорожные версии
+                            <br><strong>Защита:</strong> UVA/UVB, увлажнение
+                        </div>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- Sulwhasoo Serum -->
+                <div class="product" data-category="skincare">
+                    <div class="product-image">✨</div>
+                    <div class="product-content">
+                        <div class="category-badge">Уход за лицом</div>
+                        <div class="product-brand">Sulwhasoo</div>
+                        <div class="product-title">First Care Activating Serum</div>
+                        <div class="product-price">1 600 ₽</div>
+                        <div class="product-description">
+                            Самая продаваемая корейская сыворотка. Ключевые ингредиенты: эскулин, астрагал, японская лилия, солодка. 
+                            Функции: увлажнение, восстановление кожного барьера, антивозрастное действие.
+                            <br><br><strong>Объем:</strong> 15ml (дорожная версия)
+                            <br><strong>Эффект:</strong> Восстановление, увлажнение, anti-age
+                        </div>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- Sulwhasoo Cream -->
+                <div class="product" data-category="skincare">
+                    <div class="product-image">🧴</div>
+                    <div class="product-content">
+                        <div class="category-badge">Уход за лицом</div>
+                        <div class="product-brand">Sulwhasoo</div>
+                        <div class="product-title">Essential Firming Cream</div>
+                        <div class="product-price">1 400 ₽</div>
+                        <div class="product-description">
+                            Крем для лица, придающий коже упругость и предотвращающий морщины. 
+                            Содержит комплекс восточных трав, экстракт граната, дрожжи, корень ангелики. 
+                            Гипоаллергенная формула.
+                            <br><br><strong>Состав:</strong> Экстракт граната, женьшень, восточные травы
+                            <br><strong>Действие:</strong> Антивозрастное, укрепление кожи
+                        </div>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- O HUI SPF -->
+                <div class="product" data-category="skincare">
+                    <div class="product-image">🌞</div>
+                    <div class="product-content">
+                        <div class="category-badge">Уход за лицом</div>
+                        <div class="product-brand">O HUI</div>
+                        <div class="product-title">Day Shield Perfect Sun Black SPF 50+</div>
+                        <div class="product-price">По запросу</div>
+                        <div class="product-description">
+                            Высококачественный солнцезащитный крем с SPF 50+ и PA+++. 
+                            Содержит пикногенол - натуральный экстракт, который ингибирует выработку меланина. 
+                            Эффект фотошопа для кожи.
+                            <br><br><strong>Объем:</strong> 50ml
+                            <br><strong>Особенности:</strong> Против пигментации, основа под макияж
+                        </div>
+                        <button class="btn">Узнать цену</button>
+                    </div>
+                </div>
+
+                <!-- BonCho Toothpaste -->
+                <div class="product" data-category="oral-care">
+                    <div class="product-image">🦷</div>
+                    <div class="product-content">
+                        <div class="category-badge">Уход за полостью рта</div>
+                        <div class="product-brand">BonCho</div>
+                        <div class="product-title">Study Gums Toothpaste</div>
+                        <div class="product-price">780 ₽</div>
+                        <div class="product-description">
+                            Специальная зубная паста для здоровья десен с натуральными экстрактами. 
+                            Содержит экстракт корня солодки и прополис для противовоспалительного действия.
+                            <br><br><strong>Объем:</strong> 100ml
+                            <br><strong>Действие:</strong> Укрепление десен, противовоспалительное
+                        </div>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- Rejuran Mask -->
+                <div class="product" data-category="face-masks">
+                    <div class="product-image">😷</div>
+                    <div class="product-content">
+                        <div class="category-badge">Маски для лица</div>
+                        <div class="product-brand">Rejuran</div>
+                        <div class="product-title">Restorative Mask (5 штук)</div>
+                        <div class="product-price">4 900 ₽</div>
+                        <div class="product-description">
+                            Профессиональные восстанавливающие маски для лица с пептидами и гиалуроновой кислотой. 
+                            Интенсивное восстановление и увлажнение кожи на профессиональном уровне.
+                            <br><br><strong>Количество:</strong> 5 масок
+                            <br><strong>Эффект:</strong> Восстановление, увлажнение, омоложение
+                        </div>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- The History of Whoo Hair Set -->
+                <div class="product" data-category="hair-care">
+                    <div class="product-image">💇‍♀️</div>
+                    <div class="product-content">
+                        <div class="category-badge">Уход за волосами</div>
+                        <div class="product-brand">The History of Whoo</div>
+                        <div class="product-title">Hair Care Set</div>
+                        <div class="product-price">3 200 ₽</div>
+                        <div class="product-description">
+                            Люксовый набор для ухода за волосами от королевского бренда корейских императриц. 
+                            Содержит шампунь, кондиционер и питательную эссенцию с традиционными восточными экстрактами.
+                            <br><br><strong>Состав:</strong> 3 средства в наборе
+                            <br><strong>Эффект:</strong> Питание, укрепление, блеск волос
+                        </div>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- Eye Cream -->
+                <div class="product" data-category="skincare">
+                    <div class="product-image">👁️</div>
+                    <div class="product-content">
+                        <div class="category-badge">Уход за лицом</div>
+                        <div class="product-brand">Sulwhasoo</div>
+                        <div class="product-title">Concentrated Ginseng Renewing Eye Cream</div>
+                        <div class="product-price">2 800 ₽</div>
+                        <div class="product-description">
+                            Омолаживающий крем для области вокруг глаз с концентратом женьшеня. 
+                            Уменьшает морщины, отеки и темные круги под глазами.
+                            <br><br><strong>Объем:</strong> 20ml
+                            <br><strong>Действие:</strong> Против морщин, отеков, темных кругов
+                        </div>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </div>
+
+                <!-- Fermented Ginseng Hair Serum -->
+                <div class="product" data-category="hair-care">
+                    <div class="product-image">💧</div>
+                    <div class="product-content">
+                        <div class="category-badge">Уход за волосами</div>
+                        <div class="product-brand">Sulwhasoo</div>
+                        <div class="product-title">Fermented Ginseng Hair Serum</div>
+                        <div class="product-price">2 400 ₽</div>
+                        <div class="product-description">
+                            Концентрированная сыворотка для волос с ферментированным женьшенем. 
+                            Восстанавливает поврежденные волосы, придает блеск и эластичность.
+                            <br><br><strong>Объем:</strong> 50ml
+                            <br><strong>Активный компонент:</strong> Ферментированный женьшень
+                        </div>
+                        <button class="btn">В корзину</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Фильтрация товаров
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.product');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Убираем активный класс у всех кнопок
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Добавляем активный класс к нажатой кнопке
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                
+                products.forEach(product => {
+                    if (category === 'all' || product.getAttribute('data-category') === category) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Счетчик корзины
+        let cartCount = 0;
+        document.querySelectorAll('.btn').forEach(btn => {
+            if (btn.textContent.includes('В корзину')) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    cartCount++;
+                    document.querySelector('.header .btn').textContent = `Корзина (${cartCount})`;
+                    alert('Товар добавлен в корзину!');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
