@@ -1,0 +1,174 @@
+
+name: 🌐 Deploy Static Version to reg.ru
+
+on:
+  workflow_dispatch:  # Ручной запуск
+    inputs:
+      deploy_type:
+        description: 'Тип деплоя'
+        required: true
+        default: 'static'
+        type: choice
+        options:
+          - static
+          - full-nextjs
+
+jobs:
+  deploy-static:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: 🟢 Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: 📦 Install dependencies
+      run: |
+        cd app
+        npm ci
+        
+    - name: 🔨 Build static export
+      run: |
+        cd app
+        # Создаем статическую сборку Next.js
+        npm run build
+        
+        # Если есть статическая папка, используем её
+        if [ -d "../deploy_package_REAL" ]; then
+          echo "📁 Используем готовые статические файлы"
+          cp -r ../deploy_package_REAL/* ./out/ 2>/dev/null || mkdir -p ./out
+          cp -r ../deploy_package_REAL/* ./out/
+        else
+          echo "📁 Создаем статическую сборку из Next.js"
+          # Попробуем экспортировать статические файлы
+          npm run export 2>/dev/null || echo "Export не настроен, используем build"
+        fi
+        
+    - name: 📋 Prepare deployment files
+      run: |
+        mkdir -p static-deploy
+        
+        # Копируем статические файлы
+        if [ -d "app/out" ]; then
+          cp -r app/out/* static-deploy/
+        elif [ -d "deploy_package_REAL" ]; then
+          cp -r deploy_package_REAL/* static-deploy/
+        else
+          echo "❌ Нет статических файлов для деплоя"
+          exit 1
+        fi
+        
+        # Создаем правильный .htaccess для reg.ru
+        cat > static-deploy/.htaccess << 'EOF'
+        # KoHiCo - Премиальная корейская косметика
+        DirectoryIndex index.html
+        
+        # Кэширование статических файлов
+        <IfModule mod_expires.c>
+            ExpiresActive On
+            ExpiresByType text/css "access plus 1 year"
+            ExpiresByType application/javascript "access plus 1 year"
+            ExpiresByType image/png "access plus 1 year"
+            ExpiresByType image/jpg "access plus 1 year"
+            ExpiresByType image/jpeg "access plus 1 year"
+            ExpiresByType image/webp "access plus 1 year"
+            ExpiresByType image/svg+xml "access plus 1 year"
+        </IfModule>
+        
+        # Сжатие
+        <IfModule mod_deflate.c>
+            AddOutputFilterByType DEFLATE text/html
+            AddOutputFilterByType DEFLATE text/css
+            AddOutputFilterByType DEFLATE application/javascript
+            AddOutputFilterByType DEFLATE text/javascript
+        </IfModule>
+        
+        # Безопасность
+        <IfModule mod_headers.c>
+            Header always set X-Content-Type-Options "nosniff"
+            Header always set X-Frame-Options "SAMEORIGIN"
+            Header always set X-XSS-Protection "1; mode=block"
+        </IfModule>
+        
+        # Роутинг для SPA
+        <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteRule ^catalog/?$ catalog.html [L]
+            RewriteRule ^brands/?$ index.html#brands [R=301,L]
+            RewriteRule ^about/?$ index.html#about [R=301,L]
+            RewriteRule ^contact/?$ index.html#contact [R=301,L]
+        </IfModule>
+        EOF
+        
+        # Обновляем sitemap с актуальной датой
+        cat > static-deploy/sitemap.xml << EOF
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          <url>
+            <loc>https://www.kohico.ru/</loc>
+            <lastmod>$(date +%Y-%m-%d)</lastmod>
+            <priority>1.0</priority>
+          </url>
+          <url>
+            <loc>https://www.kohico.ru/catalog</loc>
+            <lastmod>$(date +%Y-%m-%d)</lastmod>
+            <priority>0.9</priority>
+          </url>
+          <url>
+            <loc>https://www.kohico.ru/brands</loc>
+            <lastmod>$(date +%Y-%m-%d)</lastmod>
+            <priority>0.8</priority>
+          </url>
+        </urlset>
+        EOF
+        
+        echo "📁 Файлы для деплоя подготовлены:"
+        ls -la static-deploy/
+        
+    - name: 📤 Deploy to reg.ru via FTP
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./static-deploy/
+        server-dir: ${{ secrets.FTP_SERVER_DIR }}
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/.DS_Store
+          **/Thumbs.db
+          
+    - name: 🧹 Cleanup old files on server
+      uses: appleboy/ssh-action@v0.1.5  
+      continue-on-error: true
+      with:
+        host: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        script: |
+          # Очищаем старые файлы кэша
+          find ${{ secrets.FTP_SERVER_DIR }} -name "*.log" -delete
+          find ${{ secrets.FTP_SERVER_DIR }} -name "*.tmp" -delete
+          
+    - name: ✅ Success notification
+      if: success()
+      run: |
+        echo "🎉 KoHiCo статическая версия успешно задеплоена!"
+        echo "🌐 Сайт: https://www.kohico.ru"
+        echo "📅 Время: $(date)"
+        echo "📦 Версия: Статическая HTML/CSS/JS"
+        
+    - name: ❌ Failure notification
+      if: failure() 
+      run: |
+        echo "❌ Ошибка деплоя статической версии KoHiCo"
+        echo "🔧 Проверьте:"
+        echo "   - FTP доступы в секретах GitHub"
+        echo "   - Подключение к серверу reg.ru"
+        echo "   - Права доступа к файлам"
